@@ -22,3 +22,4 @@ public class TestCycle {
 	}
 
 }
+//总结，循环中，i++和++i没有太大区别，运行速度几乎没有区别。
