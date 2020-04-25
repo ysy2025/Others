@@ -1,0 +1,24 @@
+
+public class TestCycle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i = 0;
+		long start_time = System.nanoTime();
+		for (i = 0; i < 100000; i++)
+		{
+//			System.out.print("i is: "+i+'\n');
+		}
+		long end_time = System.nanoTime();
+		System.out.println("i++ time cost is: "+(end_time - start_time) + "ns");
+		
+		long start_time_2 = System.nanoTime();
+		for (i = 0; i < 100000; ++i)
+		{
+//			System.out.print("i is: "+i+'\n');
+		}
+		long end_time_2 = System.nanoTime();
+		System.out.println("++i time cost is: "+(end_time_2 - start_time_2) + "ns");
+	}
+
+}
