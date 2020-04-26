@@ -1,0 +1,50 @@
+Java.util.Random()方法摘要：
+
+    protected int next(int bits)：生成下一个伪随机数。
+    boolean nextBoolean()：返回下一个伪随机数，它是取自此随机数生成器序列的均匀分布的boolean值。
+    void nextBytes(byte[] bytes)：生成随机字节并将其置于用户提供的 byte 数组中。
+    double nextDouble()：返回下一个伪随机数，它是取自此随机数生成器序列的、在0.0和1.0之间均匀分布的 double值。
+    float nextFloat()：返回下一个伪随机数，它是取自此随机数生成器序列的、在0.0和1.0之间均匀分布float值。
+    double nextGaussian()：返回下一个伪随机数，它是取自此随机数生成器序列的、呈高斯（“正态”）分布的double值，其平均值是0.0标准差是1.0。
+    int nextInt()：返回下一个伪随机数，它是此随机数生成器的序列中均匀分布的 int 值。
+    int nextInt(int n)：返回一个伪随机数，它是取自此随机数生成器序列的、在（包括和指定值（不包括）之间均匀分布的int值。
+    long nextLong()：返回下一个伪随机数，它是取自此随机数生成器序列的均匀分布的 long 值。
+    void setSeed(long seed)：使用单个 long 种子设置此随机数生成器的种子。
+    import java.util.Random;
+import java.util.stream.DoubleStream;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		int[] month = {23,345,234234,67,345345,877,2445};
+//		for(int i = 0; i < month.length; i++)
+//		{
+////			System.out.println("第"+(i+1)+"="+month[i]);
+//			System.out.println("第"+i+1+"="+month[i]);
+//		}
+		
+		//methods to define array; method 1
+		int[] a = {};
+		//method 2
+		int[] b;//declare array in one dimension
+		b = new int[12];//assign ram to array
+		Random rand1 = new Random();
+		int d = rand1.nextInt(100);
+		System.out.println(d);
+		double e = rand1.nextDouble();
+		System.out.println(e);
+		boolean f = rand1.nextBoolean();
+		System.out.println(f);
+		float g = rand1.nextFloat();
+		System.out.println(g);
+		double h = rand1.nextGaussian();
+		System.out.println(h);
+		int i = rand1.nextInt(1);
+		System.out.println(i);
+		long j = rand1.nextLong();
+		System.out.println(j);
+	}
+
+}
+
