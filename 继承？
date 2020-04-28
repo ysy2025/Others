@@ -1,0 +1,71 @@
+package notebook;
+
+public class RenLei {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Human Zhang = new Human(18,"zhangsan","luoxiangjie","male");
+		Zhang.talk();
+		Xuesheng Li = new Xuesheng();
+		Li.talk();
+	}
+
+}
+class Human
+{
+	//attributes
+	int age;
+	String name;
+	String addr;
+	String sex;
+	//constructor function
+	public Human(int age, String name, String addr, String sex)
+	{
+		this.age = age;
+		this.name = name;
+		this.addr = addr;
+		this.sex = sex;
+	}
+	//function
+	public void talk()
+	{
+		System.out.println("This is father method");
+		System.out.println("I am "+name+" and I am "+age+" years old "+sex+" and I live in "+addr);
+	}
+}
+class Xuesheng extends Human
+{
+	//attrs
+	int math;
+	int english;
+	//constructor function
+	Xuesheng(int age, String name, String addr, String sex, int math, int english)
+	{
+		super(age, name, addr, sex);
+		this.math = math;
+		this.english = english;
+	}
+	//如果构造函数有参数，父类已经定义了一个有参的构造函数并且父类中没有默认的无参构造方法，
+	//此时编译器不会为你调用默认的构造函数，
+	//当子类继承时，必须在自己的构造函数显式调用父类的构造函数，自己才能确保子类在初始化前父类会被实例化
+	public Xuesheng(int math, int english)
+	{
+		super(33, "James", "bailongjie","male");
+		this.math = math;
+		this.english = english;
+	}
+	
+	public Xuesheng()
+	{
+		super(33, "James", "bailongjie","male");
+		this.math = 100;
+		this.english = 110;
+	}
+	public void talk()
+	{
+		System.out.println("This is used to borrow method from father");
+		super.talk();
+		System.out.println("This is son method");
+		System.out.println("I got "+math+" in math test and I got "+english+" in english test");
+	}
+}
