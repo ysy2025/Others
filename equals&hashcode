@@ -1,0 +1,39 @@
+package kcb;
+
+public class Hash {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Li li4 = new Li(1,"li4");
+		Li li5 = new Li(2,"li5");
+		Li li6 = new Li(1,"li4");
+		System.out.println(li4.equals(li5));
+		System.out.println(li4.equals(li6));
+		System.out.println(li5.equals(li6));
+		System.out.println(li4.hashCode());
+		System.out.println(li5.hashCode());
+		System.out.println(li6.hashCode());
+	}
+
+}
+class Li
+{
+	int id;
+	String name;
+	public Li(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+//	public int hashCode()
+//	{
+//		return id*(name.hashCode());
+//	}
+	public boolean equals(Object o)
+	{
+		Li p = (Li) o;
+		return ((this.id)==p.id)&&((this.name)==p.name);
+	}
+}
+
+//28-32行的hashCode方法，如果存在，那么得到的hashcode，肯定和不存在的时候的hashcode不同；毕竟根本的算法是不同的
