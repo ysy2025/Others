@@ -1,0 +1,46 @@
+package clock;
+
+public class Niming {
+	public void test(Niao niao)
+	{
+		System.out.println(niao.get_name()+"can fly"+niao.fly()+" meters");
+	}
+	public static void main(String args[])
+	{
+		Niming niming = new Niming();
+		niming.test(new Niao()
+		{
+			public String name;
+			public int fly()
+			{
+				return 1000;
+			}
+			public void set_name()
+			{
+				this.name = "张三";
+			}
+			public String get_name()
+			{
+				return "鹧鸪哨";
+			}
+		});
+//		Niao maque = new Niao();
+	}
+}
+
+abstract class Niao
+{
+	private String name;
+	public String get_name()
+	{
+		return name;
+	}
+	public void set_name(String name)
+	{
+		this.name = name;
+	}
+	public abstract int fly();
+}
+//test方法接收一个Niao类型的参数，同时一个抽象类是没有办法直接new来实体化，需要先有实现类才能new出来实现类实例
+//所以在main类中直接new一个Niao类
+//主类中抽象类只能继承，无法实体化
