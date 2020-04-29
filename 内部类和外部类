@@ -1,0 +1,25 @@
+public class Outer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Out out = new Out();
+		out.print();
+	}
+}
+class Out
+{
+	int age = 18;
+	void print()
+	{
+		In inner = new In();
+		inner.print();
+	}
+	private class In
+	{
+		private void print()
+		{
+			System.out.println(age);
+		}
+	}
+}
+//在out类内部声明了一个内部类，然后将其封装。内部类可以直接调用out类的成分，简洁明了；但是仍然不建议使用，因为会破坏程序结构
