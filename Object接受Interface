@@ -1,0 +1,28 @@
+package clock;
+
+public class TryObj {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		B b = new B();
+		Yang yang = new Yang2();
+//		Object object = (Object) yang;
+		Object object = yang;
+		Yang yang_2 = (Yang) object;
+		yang_2.play();	
+	}
+
+}
+
+interface Yang
+{
+	public void play();
+}
+class Yang2 implements Yang
+{
+	public void play()
+	{
+		System.out.println("Hello World");
+	}
+}
+//使用Object接受接口对象的过程
