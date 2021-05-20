@@ -1,1 +1,0 @@
-# Java_amateur_practice
